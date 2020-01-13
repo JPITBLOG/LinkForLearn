@@ -68,3 +68,7 @@ https://stackoverflow.com/questions/41296668/reactjs-form-input-validation
 //hook tutorial
 
 https://www.youtube.com/watch?v=tEqNSOhCHLU&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=59
+
+//set state(synchronously) multiple time in react hook
+
+https://github.com/facebook/react/issues/16858
