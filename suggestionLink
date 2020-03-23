@@ -96,3 +96,6 @@ https://blog.logrocket.com/crud-with-node-graphql-react/
 
 //graphql example
 https://jslancer.com/blog/2017/08/20/graphql-example/
+
+//auto start is not working while changes in file in react js
+https://create-react-app.dev/docs/troubleshooting/#npm-start-doesnt-detect-changes
