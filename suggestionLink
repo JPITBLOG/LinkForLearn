@@ -111,3 +111,6 @@ https://github.com/gopinav/React-Tutorials/tree/master/React%20Hooks
 
 //how to use anted design icon in react js.
 https://dev.to/gracie/how-to-use-ant-design-s-icons-in-your-react-application-18d
+
+//multi select dropdown in react
+npm i multiselect-react-dropdown
