@@ -57,6 +57,10 @@ regex validation
 
 https://help.surveygizmo.com/help/textbox-answer-formats
 
+regex for password length should be 32 character
+
+/^(?=.{32}$)/
+
 sentense regex validation
 
 https://stackoverflow.com/questions/15472764/regular-expression-to-allow-spaces-between-words   ---on forth answer.
