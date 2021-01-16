@@ -158,3 +158,7 @@ https://www.apollographql.com/docs/apollo-server/getting-started/
 
 //how to create mutation schema in node js with apollo
 https://scotch.io/tutorials/implementing-graphql-using-apollo-on-an-express-server
+
+//image upload with ApolloGraphql Koa
+https://github.com/jaydenseric/apollo-upload-examples/blob/master/api/server.js
+https://www.codegrepper.com/code-examples/whatever/node+js+graphql+file+upload
