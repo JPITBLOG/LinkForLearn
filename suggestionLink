@@ -165,3 +165,105 @@ https://www.codegrepper.com/code-examples/whatever/node+js+graphql+file+upload
 
 //node js pagination
 https://medium.com/javascript-in-plain-english/simple-pagination-with-node-js-mongoose-and-express-4942af479ab2
+
+//image upload with swagger ui
+/*code for middleware in server.js(index.js) file*/
+swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
+    app.use(cors());
+    // Interpret Swagger resources and attach metadata to request - must be first in swagger-tools middleware chain
+    app.use(middleware.swaggerMetadata());
+    //multer middleware
+    app.use(function (req, res, next) {
+        if(req.selectedDocument){
+            req.files = req.selectedDocument
+        }else{
+            req.files = {}
+        }
+        next();
+    });
+
+    // Validate Swagger requests
+    app.use(middleware.swaggerValidator());
+
+    // Route validated requests to appropriate controller
+    app.use(middleware.swaggerRouter(options));
+
+    app.use(middleware.swaggerUi({}));
+
+    app.use(function error(err, req, res, next) {
+        if (err) {
+            console.log("error like: "+err);
+            let error = {
+                message: err.Error,
+                code: err.code,
+                error: err.results.errors
+            };
+            return res.status(400).send(error);
+        }
+        return next();
+    });
+    http.createServer(app).listen(3000, (err, response) => {
+        if (err) {
+            return  console.log('error in connection');
+        }
+        console.log('listing on port 3000');
+    });
+});
+
+/*service.js*/
+const uploadFile = multer({
+    storage: multerS3({
+        s3: null,
+        bucket: '../upload/video'
+    })
+}).fields([{name: "selectedDocument"}])
+
+/*logic file*/
+addDocumentService(req, res, next) {
+        console.log('req file: ', req);
+        uploadFile(req, res, function (error) {
+            if (error) {
+                console.log(error);
+                res.json({
+                    result: "Error",
+                    status: false
+                })
+            }else{
+                console.log('File uploaded successfully.',req.files);
+                res.json({
+                    result: req.files.file[0],
+                    status: true
+                })
+            }
+
+        });
+        let {technology, topic, selectedDocument, selectedLink} = req.swagger.params;
+        let documentObject = new DocumentationModel({
+            technology: technology.value,
+            topic: topic.value,
+
+        });
+        if(selectedDocument.value) {
+            console.log('document goted: ', selectedDocument);
+            const {originalname,buffer} = selectedDocument.value;
+            let filename = fs.createWriteStream(`upload/video/${originalname}-${Date.now()}`);
+            filename.once('open', () => {
+                filename.write(buffer);
+            });
+            const filePath = `upload/video/${originalname}-${Date.now()}`
+            const dbFilePath = `http://localhost:3000/${filePath}`;
+            documentObject = {...documentObject,selectedDocument: {tutorial : dbFilePath}}
+        }
+        if(selectedLink.value) {
+            documentObject = {...documentObject.selectedDocument,selectedLink: selectedLink.value}
+        }
+        documentObject.save((error, insertedDocument) => {
+            if(error) {
+                errorLog.code = "RUNTIME_ERROR";
+                errorLog.message = `There is an error while add documentation`;
+                return res.status(400).send(errorLog);
+            }
+            res.setHeader('content-type', 'application/json');
+            return res.status(201).send(insertedDocument);
+        });
+    };
