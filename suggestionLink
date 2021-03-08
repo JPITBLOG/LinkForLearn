@@ -167,6 +167,7 @@ https://www.codegrepper.com/code-examples/whatever/node+js+graphql+file+upload
 https://medium.com/javascript-in-plain-english/simple-pagination-with-node-js-mongoose-and-express-4942af479ab2
 
 //image upload with swagger ui
+refer document: https://github.com/badunk/multer-s3#readme
 /*code for middleware in server.js(index.js) file*/
 swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
     app.use(cors());
