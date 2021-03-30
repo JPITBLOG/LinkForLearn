@@ -268,3 +268,9 @@ addDocumentService(req, res, next) {
             return res.status(201).send(insertedDocument);
         });
     };
+
+
+/*for image crop*/
+https://resizefile.com/resize-image-by-kb.html
+/*for image resize in kb*/
+https://www12.lunapic.com/editor
