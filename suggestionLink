@@ -274,3 +274,7 @@ addDocumentService(req, res, next) {
 https://resizefile.com/resize-image-by-kb.html
 /*for image resize in kb*/
 https://www12.lunapic.com/editor
+
+
+/*status code*/
+https://stackoverflow.com/questions/2342579/http-status-code-for-update-and-delete#:~:text=For%20a%20DELETE%20request%3A%20HTTP,resource%20was%20marked%20for%20deletion%22.
