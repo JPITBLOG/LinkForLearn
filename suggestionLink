@@ -281,3 +281,6 @@ https://stackoverflow.com/questions/2342579/http-status-code-for-update-and-dele
 
 /*understand fetch-policy in Graphql*/
 https://medium.com/@galen.corey/understanding-apollo-fetch-policies-705b5ad71980
+
+/*Attempt to get field {fieldname} but it does not exist*/
+https://github.com/joepuzzo/informed/issues/287#issuecomment-716029569
