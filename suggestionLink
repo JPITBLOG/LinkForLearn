@@ -299,3 +299,6 @@ https://www.youtube.com/watch?v=1y0-IfRW114
 
 /*If user is not logged in redirect to login*/
 https://stackoverflow.com/questions/47476186/when-user-is-not-logged-in-redirect-to-login-reactjs
+
+/*apply middleware to all route in node except some specific route*/
+https://stackoverflow.com/questions/12921658/use-specific-middleware-in-express-for-all-paths-except-a-specific-one
