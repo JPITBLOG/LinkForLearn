@@ -302,3 +302,6 @@ https://stackoverflow.com/questions/47476186/when-user-is-not-logged-in-redirect
 
 /*apply middleware to all route in node except some specific route*/
 https://stackoverflow.com/questions/12921658/use-specific-middleware-in-express-for-all-paths-except-a-specific-one
+
+/*redis pub-sub for send information when process is finished*/
+https://ridwanfajar.medium.com/using-redis-pub-sub-with-node-js-its-quite-easy-c9c8b4dae79f
