@@ -305,3 +305,38 @@ https://stackoverflow.com/questions/12921658/use-specific-middleware-in-express-
 
 /*redis pub-sub for send information when process is finished*/
 https://ridwanfajar.medium.com/using-redis-pub-sub-with-node-js-its-quite-easy-c9c8b4dae79f
+
+/*progress bar in percentage calculation in looping in node js*/
+https://stackoverflow.com/questions/30987218/update-progressbar-in-each-loop
+
+
+**************Demo Code******************
+exports.filesUploadAndAssignAll = async (files, options) => {
+  const {transaction} = options;
+  const extra = {transaction};
+
+  let progress = 0, progress_max = files.length;
+
+  exports.progressBar = async (fileCounter) => {
+    if (progress_max && fileCounter) {
+      progress = fileCounter / progress_max * 100;
+      console.log('percent:------------------------------------------ ' + progress + '% - ' + fileCounter + '/' + progress_max);
+      await this.informToClientAboutImportInfluencers(progress | 0);
+    }
+  }
+
+  console.log('file length: ',files.length);
+  let numberOfFile = files.length;
+  let countForEachLoop = 0;
+  return await files.forEachAsync(async (file) => {
+    console.log('upload', file['filePath']);
+    countForEachLoop++;
+
+    await this.progressBar(countForEachLoop); //updates the progressbar, even in loop
+
+    let newFile = await FileService.upload(file['filePath'], null, null, {clientId: file['clientId'], projectId: file['projectId'], userId: file['userId'], ...extra});
+    let params = {id: file['influencerId']};
+    params[file['influencerFileNameField']] = newFile.url;
+    await InfluencerService.save(params, extra);
+  })
+}
