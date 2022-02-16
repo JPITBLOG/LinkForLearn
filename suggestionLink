@@ -343,3 +343,12 @@ exports.filesUploadAndAssignAll = async (files, options) => {
 
 /*Sharing React components between separate projects*/
 https://medium.com/@Powderham/sharing-react-components-between-separate-projects-self-hosting-with-git-installing-with-yarn-npm-d3275b64239c
+
+/*nest js CRUD operation*/
+https://dev.to/carlomigueldy/building-a-restful-api-with-nestjs-and-mongodb-mongoose-2165
+
+/*nest js setup*/
+https://codingthesmartway.com/nestjs-for-absolute-beginners/
+
+/*nest js with mongodb*/
+https://www.youtube.com/watch?v=L3JZhj9Odfg
