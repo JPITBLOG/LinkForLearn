@@ -367,3 +367,6 @@ https://stackoverflow.com/questions/48436813/create-react-app-error-module-not-f
 
 /*formik value should be initial value when click on reset button*/
 https://codesandbox.io/s/formik-form-reset-forked-m35nv2?file=/src/index.js:839-852
+
+/*Add Icon for dropdown in Material Ui Select box*/
+https://codesandbox.io/s/69315706-how-can-i-add-an-icon-to-material-ui-select-options-qzu8r?file=/demo.js:825-889
