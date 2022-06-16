@@ -374,3 +374,6 @@ https://codesandbox.io/s/69315706-how-can-i-add-an-icon-to-material-ui-select-op
 /*How to use google font in react app*/
 https://blog.greenroots.info/3-quick-ways-to-add-fonts-to-your-react-app
 https://fonts.google.com/
+
+/*debounce example*/
+https://codesandbox.io/s/sgyc34?module=/src/App.tsx&file=/src/App.tsx
