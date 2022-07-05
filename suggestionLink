@@ -377,3 +377,7 @@ https://fonts.google.com/
 
 /*debounce example*/
 https://codesandbox.io/s/sgyc34?module=/src/App.tsx&file=/src/App.tsx
+
+/*Yup validation for object or string*/
+https://stackoverflow.com/questions/59213182/object-or-string-type-conditional-with-yup-validation
+    
